@@ -5,7 +5,7 @@ Uploading Images and Videos to cloudinary from blazor server
 First, the application runs on dotnet 7.0 SDK and runtime:
 
 ```bash
-git clone 
+git clone https://github.com/muthuri-dev/blazor-server-cloudinary.git
 # or
 cd blazor-server-cloudinary
 # or
