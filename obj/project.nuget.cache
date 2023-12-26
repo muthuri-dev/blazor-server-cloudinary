@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Mg1AcAcsusLJ5zlFkvgafUMUnk9odDNmkTE+MUpJKRr0kYnargVdhcwmukiszmgixe951lY1sAEyCxymm67yug==",
+  "success": true,
+  "projectFilePath": "/home/muthuri_dev/Applantus/blazor-server-cloudinary/blazor-server-cloudinary.csproj",
+  "expectedPackageFiles": [
+    "/home/muthuri_dev/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.14/microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
