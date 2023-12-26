@@ -7,7 +7,7 @@ namespace blazor_server_cloudinary.services
 {
     public class FileUploadService
     {
-        public string UploadedFileUrl { get; private set; }
+        public string UploadedFileUrl { get; private set; } = string.Empty;
 
         public void SetUploadedFileUrl(string url)
         {
