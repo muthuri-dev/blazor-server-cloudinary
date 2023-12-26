@@ -7,4 +7,8 @@
     <RootNamespace>blazor_server_cloudinary</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CloudinaryDotNet" Version="1.24.0" />
+  </ItemGroup>
+
 </Project>

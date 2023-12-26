@@ -1,9 +1,31 @@
 ﻿@page "/"
+@inject CloudinaryDotNet.Cloudinary Cloudinary
+@inject blazor_server_cloudinary.services.FileUploadService FileUploadService
+@using CloudinaryDotNet
+@using CloudinaryDotNet.Actions
+@using Microsoft.AspNetCore.Components.Forms
 
-<PageTitle>Index</PageTitle>
+<InputFile OnChange="UploadFile" />
 
-<h1>Hello, world!</h1>
+@if (!string.IsNullOrEmpty(FileUploadService.UploadedFileUrl))
+{
+    <p>File uploaded successfully. URL: @FileUploadService.UploadedFileUrl</p>
+}
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+@code {
+    private async Task UploadFile(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        if (file is not null)
+        {
+            using var stream = file.OpenReadStream();
+            var uploadParams = new ImageUploadParams()
+                {
+                    File = new FileDescription(file.Name, stream),
+                    PublicId = file.Name
+                };
+            var uploadResult = await Cloudinary.UploadAsync(uploadParams);
+            FileUploadService.SetUploadedFileUrl(uploadResult.SecureUrl.ToString());
+        }
+    }
+}

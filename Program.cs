@@ -1,13 +1,20 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using blazor_server_cloudinary.Data;
+using CloudinaryDotNet;
+using blazor_server_cloudinary.services;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddSingleton(new CloudinaryDotNet.Cloudinary(new Account(
+    "dhwehpegh",
+    "523431697144815",
+    "FZ-ySnxsrtw-EytZf9HGHYy4DGg"
+)));
+builder.Services.AddSingleton<FileUploadService>();
 
 var app = builder.Build();
 

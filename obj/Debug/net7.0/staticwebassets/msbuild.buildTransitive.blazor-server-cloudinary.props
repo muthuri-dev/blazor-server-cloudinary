@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/blazor-server-cloudinary.props" />
+</Project>
