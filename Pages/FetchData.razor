@@ -4,4 +4,6 @@
 @if (!string.IsNullOrEmpty(FileUploadService.UploadedFileUrl))
 {
     <p>URL of the uploaded file: @FileUploadService.UploadedFileUrl</p>
+    <img src="@FileUploadService.UploadedFileUrl" alt="Uploaded file" />
+    @* <video controls src="@FileUploadService.UploadedFileUrl">Your browser does not support the video tag.</video> *@
 }
